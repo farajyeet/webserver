@@ -1,6 +1,11 @@
 # Web Server C++
 A simple web server on cpp
 
+# Contact
+[![dev chat](https://discordapp.com/api/guilds/765925217595817984/widget.png?style=shield)](https://discord.gg/gtps)
+/
+[faraj's official discord account](https://discord.com/users/635406751495356436)
+
 ## Contribute
 
 Contributions are always welcome!
