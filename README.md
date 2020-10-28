@@ -6,12 +6,12 @@ A simple web server on cpp
 /
 [faraj's official discord account](https://discord.com/users/635406751495356436)
 
-## Contribute
+# Contribute
 
 Contributions are always welcome!
 Please read the [contribution guidelines](contributing.md) first.
 
-## License
+# License
 
 [![CC0](https://licensebuttons.net/p/zero/1.0/88x31.png)](https://creativecommons.org/publicdomain/zero/1.0/)
 
