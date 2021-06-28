@@ -2,9 +2,7 @@
 A simple web server on cpp
 
 # Contact
-[![dev chat](https://discordapp.com/api/guilds/776793836411813909/widget.png?style=shield)](https://discord.gg/java)
-/
-[faraj's official discord account](https://discord.com/users/635406751495356436)
+[Mail](mailto:farajj1337@outlook.com)
 
 # Contribute
 
