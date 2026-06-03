@@ -12,11 +12,11 @@
 
 class Mime {
 	public:
-		bool readMimeConfig(string filename);
-		string getMimeFromExtension(string filename);
+		bool readMimeConfig(const string& filename);
+		string getMimeFromExtension(const string& filename) const;
 	private:
 		map<string, string> mimemap;
 
 };
 
-#endif 
+#endif
