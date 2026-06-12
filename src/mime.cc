@@ -1,6 +1,6 @@
 #include "mime.h"
 
-bool Mime::readMimeConfig(string filename) 
+bool Mime::readMimeConfig(const string& filename)
 {
 	vector<string> tokens;
 
@@ -11,11 +11,10 @@ bool Mime::readMimeConfig(string filename)
 	}
 
 	string tmp_line;
-	while (!getline(file, tmp_line).eof()) {
+	while (getline(file, tmp_line)) {
 		tokens.clear();
 
-
-		if (tmp_line[0] != '#') {
+		if (!tmp_line.empty() && tmp_line[0] != '#') {
 
 
 			string buf; 
@@ -23,21 +22,27 @@ bool Mime::readMimeConfig(string filename)
 			while (ss >> buf)
 				tokens.push_back(buf);
 
-			for (int j = tokens.size(); j > 1; j--) {
+			for (vector<string>::size_type j = tokens.size(); j > 1; j--) {
 				this->mimemap[tokens[j-1]] = tokens[0];
 			}
 		}
 	}
 
 	file.close();
+	return true;
 }
 
-string Mime::getMimeFromExtension(string filename) 
+string Mime::getMimeFromExtension(const string& filename) const
 {
-	string file_extension = filename.substr(filename.rfind(".")+1, filename.length());
+	string::size_type dot = filename.rfind(".");
+	if (dot == string::npos || dot + 1 >= filename.length())
+		return "text/plain";
+
+	string file_extension = filename.substr(dot + 1);
 	
-	if (this->mimemap.find(file_extension) == this->mimemap.end()) 
+	map<string, string>::const_iterator iter = this->mimemap.find(file_extension);
+	if (iter == this->mimemap.end())
 	    return "text/plain";
 	else
-		return this->mimemap[file_extension];
+		return iter->second;
 }
