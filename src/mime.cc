@@ -45,4 +45,8 @@ string Mime::getMimeFromExtension(const string& filename) const
 	    return "text/plain";
 	else
 		return iter->second;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 80a560286fdbe3a6340f83ef069cddf12a6eaad4
